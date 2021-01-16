@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
 /*.demonstration {
   border: 2px solid green;
 }
@@ -291,12 +295,14 @@
   text-align: center;
   color: #34495e;
   padding: 15px 25px 15px 25px;
+  /* font-family: 'Roboto Condensed', sans-serif; */
 }
 
 #mainText > ul li {
   display: inline-block;
   list-style: none;
   padding: 0 28px 0 0;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #actualStartButton {
@@ -384,22 +390,25 @@
 }
 
 #tutorial > h3 {
-  padding-bottom: 5px;
+  padding: 10px 0px 5px 0px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #tutorial > h6 {
   padding: 5px 20px 5px 20px;
+  font-family: 'Saira Extra Condensed', sans-serif;
 }
 
 #tutorial > p {
-  padding: 5px 20px 5px 20px;
+  padding: 25px 80px 5px 80px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #tutorial > ul li {
   list-style: none;
-  padding-bottom: 5px;
-  padding-right: 40px;
-  font-size: 14px;
+  padding: 0px 40px 5px 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
 }
 
 /*#otherText > ul li {

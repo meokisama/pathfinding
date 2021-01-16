@@ -442,7 +442,7 @@ Board.prototype.clearPath = function(clickedButton) {
 
   document.getElementById("startButtonStart").onclick = () => {
     if (!this.currentAlgorithm) {
-      document.getElementById("startButtonStart").innerHTML = '<button class="btn btn-default navbar-btn" type="button">Pick an Algorithm!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button class="btn btn-default navbar-btn" type="button">Hãy chọn một thuật toán!</button>'
     } else {
       this.clearPath("clickedButton");
       this.toggleButtons();
@@ -714,11 +714,11 @@ Board.prototype.toggleTutorialButtons = function() {
   let board = this;
   function nextPreviousClick() {
     if (counter === 1) {
-      document.getElementById("tutorial").innerHTML = `<h3>Welcome to Pathfinding Visualizer!</h3><h6>This short tutorial will walk you through all of the features of this application.</h6><p>If you want to dive right in, feel free to press the "Skip Tutorial" button below. Otherwise, press "Next"!</p><div id="tutorialCounter">1/9</div><img id="mainTutorialImage" src="public/styling/c_icon.png"><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
+      document.getElementById("tutorial").innerHTML = `<h3>Hiii, đây là Pathfinding Algorithms Visualizer!</h3><h6>Đoạn hướng dẫn này sẽ cho bạn cái nhìn tổng quan về web app này.</h6><p>Nếu cảm thấy không cần thiết, click <b>"Skip Tutorial"</b> bên dưới. Còn không thì nhấn <b>"Next"</b> để bắt đầu nhaa !</p><div id="tutorialCounter">1/9</div><img id="mainTutorialImage" src="public/styling/c_icon.png"><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
     } else if (counter === 2) {
-      document.getElementById("tutorial").innerHTML = `<h3>What is a pathfinding algorithm?</h3><h6>At its core, a pathfinding algorithm seeks to find the shortest path between two points. This application visualizes various pathfinding algorithms in action, and more!</h6><p>All of the algorithms on this application are adapted for a 2D grid, where 90 degree turns have a "cost" of 1 and movements from a node to another have a "cost" of 1.</p><div id="tutorialCounter">${counter}/9</div><img id="mainTutorialImage" src="public/styling/path.png"><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
+      document.getElementById("tutorial").innerHTML = `<h3>Thuật toán Tìm đường đi ngắn nhất</h3><h6>Nói dễ hiểu thì như tên gọi, những thuật toán này sẽ đoạn đường ngắn nhất nối 2 điểm lại với nhau.</h6><p> Và ứng dụng này sẽ biểu diễn trực các thuật toán đó, ngoài một số thuật toán chắc các bạn đã được học trong môn "Cấu trúc dữ liệu & Giải thuật", mình có bổ sung thêm vài thuật toán khác nữa. Tất cả các thuật toán sẽ được biểu diễn thực tế dưới dạng lưới chứ không phải sơ đồ như các bạn đã học. <br/> <b>Lưu ý,</b> những khúc ôm cua 90° sẽ có trọng số là 1 và những chuyện động giữa 2 điểm cũng có trọng số là 1.</p><div id="tutorialCounter">${counter}/9</div><img id="mainTutorialImage" src="public/styling/path.png"><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
     } else if (counter === 3) {
-      document.getElementById("tutorial").innerHTML = `<h3>Picking an algorithm</h3><h6>Choose an algorithm from the "Algorithms" drop-down menu.</h6><p>Note that some algorithms are <i><b>unweighted</b></i>, while others are <i><b>weighted</b></i>. Unweighted algorithms do not take turns or weight nodes into account, whereas weighted ones do. Additionally, not all algorithms guarantee the shortest path. </p><img id="secondTutorialImage" src="public/styling/algorithms.png"><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
+      document.getElementById("tutorial").innerHTML = `<h3>Chọn một thuật toán!</h3><h6>Đầu tiên hãy chọn một thuật toán từ menu "Thuật toán" ở thanh công cụ.</h6><p>Hãy nhớ rằng một vài thuật toán <i><b>có trọng số</b></i>, nhưng cũng có một vài thuật toán <i><b>không có</b></i>. Thuật toán không trọng số sẽ không chọn hay cộng các trọng số trong quá trình giải thuật (có đâu mà cộng), trong khi đó, các thuật toán sử dụng trọng số thì có. Với lại, không phải tất cả thuật toán được trình bày ở đây sẽ trả về đường đi ngắn nhất. </p><img id="secondTutorialImage" src="public/styling/algorithms.png"><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
     } else if (counter === 4) {
       document.getElementById("tutorial").innerHTML = `<h3>Meet the algorithms</h3><h6>Not all algorithms are created equal.</h6><ul><li><b>Dijkstra's Algorithm</b> (weighted): the father of pathfinding algorithms; guarantees the shortest path</li><li><b>A* Search</b> (weighted): arguably the best pathfinding algorithm; uses heuristics to guarantee the shortest path much faster than Dijkstra's Algorithm</li><li><b>Greedy Best-first Search</b> (weighted): a faster, more heuristic-heavy version of A*; does not guarantee the shortest path</li><li><b>Swarm Algorithm</b> (weighted): a mixture of Dijkstra's Algorithm and A*; does not guarantee the shortest-path</li><li><b>Convergent Swarm Algorithm</b> (weighted): the faster, more heuristic-heavy version of Swarm; does not guarantee the shortest path</li><li><b>Bidirectional Swarm Algorithm</b> (weighted): Swarm from both sides; does not guarantee the shortest path</li><li><b>Breath-first Search</b> (unweighted): a great algorithm; guarantees the shortest path</li><li><b>Depth-first Search</b> (unweighted): a very bad algorithm for pathfinding; does not guarantee the shortest path</li></ul><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>`
     } else if (counter === 5) {
@@ -750,7 +750,7 @@ Board.prototype.toggleButtons = function() {
 
     document.getElementById("startButtonStart").onclick = () => {
       if (!this.currentAlgorithm) {
-        document.getElementById("startButtonStart").innerHTML = '<button class="btn btn-default navbar-btn" type="button">Pick an Algorithm!</button>'
+        document.getElementById("startButtonStart").innerHTML = '<button class="btn btn-default navbar-btn" type="button">Hãy chọn một thuật toán!</button>'
       } else {
         this.clearPath("clickedButton");
         this.toggleButtons();
@@ -803,17 +803,17 @@ Board.prototype.toggleButtons = function() {
 
     document.getElementById("adjustFast").onclick = () => {
       this.speed = "fast";
-      document.getElementById("adjustSpeed").innerHTML = 'Speed: Fast<span class="caret"></span>';
+      document.getElementById("adjustSpeed").innerHTML = 'Tốc độ: Nhanh<span class="caret"></span>';
     }
 
     document.getElementById("adjustAverage").onclick = () => {
       this.speed = "average";
-      document.getElementById("adjustSpeed").innerHTML = 'Speed: Average<span class="caret"></span>';
+      document.getElementById("adjustSpeed").innerHTML = 'Tốc độ: Vừa<span class="caret"></span>';
     }
 
     document.getElementById("adjustSlow").onclick = () => {
       this.speed = "slow";
-      document.getElementById("adjustSpeed").innerHTML = 'Speed: Slow<span class="caret"></span>';
+      document.getElementById("adjustSpeed").innerHTML = 'Tốc độ: Chậm<span class="caret"></span>';
     }
 
     document.getElementById("startStairDemonstration").onclick = () => {
@@ -843,47 +843,47 @@ Board.prototype.toggleButtons = function() {
     }
 
     document.getElementById("startButtonDijkstra").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Dijkstra\'s!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn Dijkstra\'s!</button>'
       this.currentAlgorithm = "dijkstra";
       this.changeStartNodeImages();
     }
 
     document.getElementById("startButtonAStar").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Swarm!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn Swarm!</button>'
       this.currentAlgorithm = "CLA";
       this.currentHeuristic = "manhattanDistance"
       this.changeStartNodeImages();
     }
 
     document.getElementById("startButtonAStar2").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize A*!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn A*!</button>'
       this.currentAlgorithm = "astar";
       this.currentHeuristic = "poweredManhattanDistance"
       this.changeStartNodeImages();
     }
 
     document.getElementById("startButtonAStar3").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Convergent Swarm!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn Convergent Swarm!</button>'
       this.currentAlgorithm = "CLA";
       this.currentHeuristic = "extraPoweredManhattanDistance"
       this.changeStartNodeImages();
     }
 
     document.getElementById("startButtonGreedy").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Greedy!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn Greedy!</button>'
       this.currentAlgorithm = "greedy";
       this.changeStartNodeImages();
     }
 
     document.getElementById("startButtonBFS").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize BFS!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn BFS!</button>'
       this.currentAlgorithm = "bfs";
       this.clearWeights();
       this.changeStartNodeImages();
     }
 
     document.getElementById("startButtonDFS").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize DFS!</button>'
+      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Biểu diễn DFS!</button>'
       this.currentAlgorithm = "dfs";
       this.clearWeights();
       this.changeStartNodeImages();
