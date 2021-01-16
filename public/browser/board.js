@@ -654,9 +654,9 @@ Board.prototype.changeStartNodeImages = function() {
   }
   if (unweighted.includes(this.currentAlgorithm)) {
     if (this.currentAlgorithm === "dfs") {
-      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>không trọng số</b></i> và <i><b>không trả về</b></i> đường đi ngắn nhất!`;
+      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <b>không trọng số</b> và <b>không trả về</b> đường đi ngắn nhất!`;
     } else {
-      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>không trọng số</b></i> và <i><b>sẽ trả về</b></i> đường đi ngắn nhất!`;
+      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <b>không trọng số</b> và <b>sẽ trả về</b> đường đi ngắn nhất!`;
     }
     document.getElementById("weightLegend").className = "strikethrough";
     for (let i = 0; i < 14; i++) {
@@ -666,7 +666,7 @@ Board.prototype.changeStartNodeImages = function() {
     }
   } else {
     if (this.currentAlgorithm === "greedy" || this.currentAlgorithm === "CLA") {
-      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>trọng số</b></i> và <i><b>không trả về</b></i> đường đi ngắn nhất!`;
+      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <b>trọng số</b> và <b>không trả về</b> đường đi ngắn nhất!`;
     }
     document.getElementById("weightLegend").className = "";
     for (let i = 0; i < 14; i++) {
@@ -677,7 +677,7 @@ Board.prototype.changeStartNodeImages = function() {
   }
   if (this.currentAlgorithm === "bidirectional") {
 
-    document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>trọng số</b></i> và <i><b>không trả về</b></i> đường đi ngắn nhất!`;
+    document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <b>trọng số</b> và <b>không trả về</b> đường đi ngắn nhất!`;
     document.getElementById("bombLegend").className = "strikethrough";
     document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
   } else {
@@ -685,7 +685,7 @@ Board.prototype.changeStartNodeImages = function() {
     document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav";
   }
   if (guaranteed.includes(this.currentAlgorithm)) {
-    document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>trọng số</b></i> và <i><b>sẽ trả về</b></i> đường đi ngắn nhất!`;
+    document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <b>trọng số</b> và <b>sẽ trả về</b> đường đi ngắn nhất!`;
   }
 };
 

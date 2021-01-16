@@ -295,7 +295,7 @@
   text-align: center;
   color: #34495e;
   padding: 15px 25px 15px 25px;
-  /* font-family: 'Roboto Condensed', sans-serif; */
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #mainText > ul li {
