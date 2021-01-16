@@ -654,9 +654,9 @@ Board.prototype.changeStartNodeImages = function() {
   }
   if (unweighted.includes(this.currentAlgorithm)) {
     if (this.currentAlgorithm === "dfs") {
-      document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>unweighted</b></i> and <i><b>does not guarantee</b></i> the shortest path!`;
+      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>không trọng số</b></i> và <i><b>không trả về</b></i> đường đi ngắn nhất!`;
     } else {
-      document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>unweighted</b></i> and <i><b>guarantees</b></i> the shortest path!`;
+      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>không trọng số</b></i> và <i><b>sẽ trả về</b></i> đường đi ngắn nhất!`;
     }
     document.getElementById("weightLegend").className = "strikethrough";
     for (let i = 0; i < 14; i++) {
@@ -666,7 +666,7 @@ Board.prototype.changeStartNodeImages = function() {
     }
   } else {
     if (this.currentAlgorithm === "greedy" || this.currentAlgorithm === "CLA") {
-      document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>does not guarantee</b></i> the shortest path!`;
+      document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>trọng số</b></i> và <i><b>không trả về</b></i> đường đi ngắn nhất!`;
     }
     document.getElementById("weightLegend").className = "";
     for (let i = 0; i < 14; i++) {
@@ -677,7 +677,7 @@ Board.prototype.changeStartNodeImages = function() {
   }
   if (this.currentAlgorithm === "bidirectional") {
 
-    document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>does not guarantee</b></i> the shortest path!`;
+    document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>trọng số</b></i> và <i><b>không trả về</b></i> đường đi ngắn nhất!`;
     document.getElementById("bombLegend").className = "strikethrough";
     document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
   } else {
@@ -685,7 +685,7 @@ Board.prototype.changeStartNodeImages = function() {
     document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav";
   }
   if (guaranteed.includes(this.currentAlgorithm)) {
-    document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>guarantees</b></i> the shortest path!`;
+    document.getElementById("algorithmDescriptor").innerHTML = `${name} là giải thuật <i><b>trọng số</b></i> và <i><b>sẽ trả về</b></i> đường đi ngắn nhất!`;
   }
 };
 
@@ -720,7 +720,7 @@ Board.prototype.toggleTutorialButtons = function() {
     } else if (counter === 3) {
       document.getElementById("tutorial").innerHTML = `<h3>Chọn một thuật toán!</h3><h6>Đầu tiên hãy chọn một thuật toán từ menu <b>"Thuật toán"</b> ở thanh công cụ.</h6><p>Hãy nhớ rằng một vài thuật toán <i><b>có trọng số</b></i>, nhưng cũng có một vài thuật toán <i><b>không có</b></i>. Thuật toán không trọng số sẽ không chọn hay cộng các trọng số trong quá trình giải thuật (có đâu mà cộng), trong khi đó, các thuật toán sử dụng trọng số thì có. <br/> Với lại, không phải tất cả thuật toán được trình bày ở đây sẽ trả về đường đi ngắn nhất. </p><img id="secondTutorialImage" width="150px" src="public/styling/algorithms.png"><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Tiếp theo</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Quay lại</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Bỏ qua hướng dẫn</button>`
     } else if (counter === 4) {
-      document.getElementById("tutorial").innerHTML = `<h3>Các thuật toán hỗ trợ</h3><h6>Không phải tất cả các thuật toán đều được tạo ra như nhau.</h6><ul><li><b>Thuật toán Dijkstra</b> (trọng số): ông tổ của giải thuật tìm đường, đảm bảo trả về đường đi ngắn nhất.  </li><li><b>A* Search</b> (trọng số): được cho là thuật toán tìm đường tốt nhất, sử dụng heuristics nên thời gian giải thuật sẽ nhanh hơn Dijkstra rất nhiều.</li><li><b>Greedy Best-first Search</b> (trọng số): phiên bản nhanh hơn, heuristic-heavy hơn nhiều của thuật toán A*, nhưng không trả về đường đi ngắn nhất.</li><li><b>Swarm Algorithm</b> (trọng số): con lai của Dijkstra và A*; không trả về đường đi ngắn nhất.</li><li><b>Convergent Swarm Algorithm</b> (trọng số): phiên bản nhanh hơn, heuristic-heavy hơn của giải thuật Swarm, không trả về đường đi ngắn nhất.</li><li><b>Bidirectional Swarm</b> (trọng số): Swarm từ dưới lên, không trả về đường đi ngắn nhất.</li><li><b>Breath-first Search</b> (không trọng số): một thuật toán rất hay, kết quả trả về đường đi ngắn nhất.</li><li><b>Depth-first Search</b> (không trọng số):  một thuật toán các bạn sẽ được học ở môn Giải thuật, học rồi sẽ thấy nó là một thuật toán rất tệ trong giải thuật Tìm đường, và không trả về đường đi ngắn nhất.</li></ul><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Tiếp theo</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Quay lại</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Bỏ qua hướng dẫn</button>`
+      document.getElementById("tutorial").innerHTML = `<h3>Các thuật toán hỗ trợ</h3><h6>Không phải tất cả các thuật toán đều được tạo ra như nhau.</h6><ul><li><b>Thuật toán Dijkstra</b> (trọng số): ông tổ của giải thuật tìm đường, đảm bảo trả về đường đi ngắn nhất.  </li><li><b>A* Search</b> (trọng số): được cho là thuật toán tìm đường tốt nhất, sử dụng heuristics nên thời gian giải thuật sẽ nhanh hơn Dijkstra rất nhiều.</li><li><b>Greedy Best-first Search</b> (trọng số): là giải thuật tham lam, phiên bản nhanh hơn, heuristic-heavy hơn nhiều của thuật toán A*, nhưng không trả về đường đi ngắn nhất.</li><li><b>Swarm Algorithm</b> (trọng số): con lai của Dijkstra và A*; không trả về đường đi ngắn nhất.</li><li><b>Convergent Swarm Algorithm</b> (trọng số): phiên bản nhanh hơn, heuristic-heavy hơn của giải thuật Swarm, không trả về đường đi ngắn nhất.</li><li><b>Bidirectional Swarm</b> (trọng số): Swarm từ dưới lên, không trả về đường đi ngắn nhất.</li><li><b>Breath-first Search</b> (không trọng số): một thuật toán rất hay, kết quả trả về đường đi ngắn nhất.</li><li><b>Depth-first Search</b> (không trọng số):  một thuật toán các bạn sẽ được học ở môn Giải thuật, học rồi sẽ thấy nó là một thuật toán rất tệ trong giải thuật Tìm đường, và không trả về đường đi ngắn nhất.</li></ul><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Tiếp theo</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Quay lại</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Bỏ qua hướng dẫn</button>`
     } else if (counter === 5) {
       document.getElementById("tutorial").innerHTML = `<h3>Thêm Tường và Trọng số</h3><h6>Click vào các nút trên lưới để thêm Tường. Click trong khi giữ phím W để thêm Điểm trọng số. <br/> Hoặc có thể dùng các mẫu được cài đặt sẵn trong menu <b>"Mẫu mặc định"</b>.</h6><p>Tường là thứ mà đường đi <b>không thể xuyên qua.</b> Còn Điểm trọng số, vẫn có thể đi qua, nhưng chi phí để đi quá nó sẽ cao hơn. Bình thường đi qua 2 nút thì trọng số là 1, nhưng đi qua Điểm trọng số thì con số này là 15.</p><img id="secondTutorialImage" src="public/styling/walls.gif"><div id="tutorialCounter">${counter}/9</div><button id="nextButton" class="btn btn-default navbar-btn" type="button">Tiếp theo</button><button id="previousButton" class="btn btn-default navbar-btn" type="button">Quay lại</button><button id="skipButton" class="btn btn-default navbar-btn" type="button">Bỏ qua hướng dẫn</button>`
     } else if (counter === 6) {
